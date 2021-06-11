@@ -27,6 +27,8 @@ namespace RestWithASPNETUdemy
 
             services.AddDbContext<PostgreSQLContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddApiVersioning();
+
             services.AddScoped<IPersonService, PersonServiceImplementation>(); //Dependency Injection
 
             services.AddSwaggerGen(c =>
